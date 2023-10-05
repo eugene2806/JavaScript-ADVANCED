@@ -1,5 +1,5 @@
 'use strict';
-let Array1 = [
+let array1 = [
     { id: 1, name: 'Вася' },
     { id: 2, name: 'Петя' },
     { id: 1, name: 'Вася' },
@@ -9,15 +9,13 @@ let Array1 = [
     { id: 3, name: 'Вася' },
     { id: 3, name: 'Вася' },
 ];
-const array2 =[];
-const setArray = new Set(Array1.map(el => el.id));
-Array1.forEach(obj => {
-    const checkElement = [...setArray].find(el => el === obj.id)
-    setArray.delete(checkElement);
-    if(checkElement) {
-        array2.push(obj);
-    }  
+
+const setArray = new Set(array1.map(el => el.id));
+array1 = [...setArray].map(elSet => {
+    const filterEl =  array1.find(el => el.id === elSet);
+    return filterEl;
 });       
-Array1 = array2
-console.log(Array1)
+
+console.log(array1);
+
 
