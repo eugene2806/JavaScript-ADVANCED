@@ -3,10 +3,9 @@
 function random(dice) {
     const max = Number(dice.replace('d', ''));
     if(isFinite(max)){
-        const res = Math.round(Math.random() * (max - 1) + 1);
-        console.log(res);
+        return Math.round(Math.random() * (max - 1) + 1);
     }
     return;
 }
 
-random('d20');
+console.log(random('d20'));
