@@ -12,8 +12,7 @@ let array1 = [
 
 const setArray = new Set(array1.map(el => el.id));
 array1 = [...setArray].map(elSet => {
-    const filterEl =  array1.find(el => el.id === elSet);
-    return filterEl;
+    return array1.find(el => el.id === elSet);;
 });       
 
 console.log(array1);
