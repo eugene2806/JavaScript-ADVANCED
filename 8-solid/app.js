@@ -16,8 +16,9 @@ class Billing {
 class FixBilling extends Billing {
      fixBilling() {
         this.amount = this.calculateTotal();
-        console.log(this.amount);
+        return this.amount;
      }
+     
 }
 
 class HourBilling extends Billing {
@@ -27,23 +28,23 @@ class HourBilling extends Billing {
     }
     hourBilling() {
         this.amount = this.calculateTotal() * this.hours;
-        console.log(this.amount);
+        return this.amount;
     }
 }
 
 class ItemBilling extends Billing {
     itemBilling() {
         this.amount = this.calculateTotal() * this.array.length;
-        console.log(this.amount); 
+        return this.amount
     }
 }
 
-const bil = new FixBilling([100, 200, 150]);
-bil.fixBilling();
-const bil2 = new HourBilling([100, 200, 150], 2);
-bil2.hourBilling();
-const bil3 = new ItemBilling([100, 200, 150]);
-bil3.itemBilling();
+const bil = new FixBilling([100, 200, 150]).fixBilling();
+console.log(bil);
+const bil2 = new HourBilling([100, 200, 150], 2).hourBilling();
+console.log(bil2);
+const bil3 = new ItemBilling([100, 200, 150]).itemBilling();
+console.log(bil3);
 
 
 
